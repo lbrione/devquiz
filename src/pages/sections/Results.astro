@@ -1,18 +1,11 @@
-<section class="h-[200px] bg-red-500 hidden">
+<section class="quiz-results h-[200px] bg-red-500 hidden show-results mt-10">
   
 </section>
 
 
 <style>
-  section:not(.hidden) {
-    display: flex;
+  .show-results {
+    display: block;
+    animation: show-up .3s both .5s;
   }
-
-  section {
-    transform: translateY(200%);
-  }
-
-  body:hover section{
-    transform: translateY(0);
-  } 
 </style>

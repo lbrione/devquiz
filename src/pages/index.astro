@@ -54,17 +54,14 @@ import Github from '../icons/github.astro'
     }
   }
 
-  @keyframes hide-show-elem {
-    10% {
-      transform: translateY(30px);
-    }
-    50% {
-      transform: translateY(-200%);
+  @keyframes show-up {
+    0% {
+      transform: translateY(100%);
       opacity: 0;
     }
 
-    80% {
-      transform: translateY(30px);
+    50% {
+      transform: translateY(-50px);
     }
 
     100% {

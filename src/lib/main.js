@@ -5,8 +5,7 @@ const $ = (selector, context = document) => context.querySelector(selector)
 
 const $quizMenu = $('.quiz-menu')
 const $quizQuestion = $('.quiz-question')
-const $progress = $('.progress', $quizQuestion)
-const $question = $('.question', $quizQuestion)
+const $quizResults = $('.quiz-results')
 const $options = $('.options', $quizQuestion)
 
 const questions = JSON.parse($('[data-json]').dataset.json)
@@ -36,7 +35,8 @@ function checkOption({target}) {
 
   setTimeout(() => {
     if (currentQuestion === questions.length) {
-      alert('fin')
+      $quizQuestion.classList.add('hide-question')
+      $quizResults.classList.add('show-results')
       return
     }
     setQuestion()
