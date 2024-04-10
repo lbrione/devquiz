@@ -1,0 +1,43 @@
+---
+const { name, file, img } = Astro.props
+---
+
+<a href="/questions">
+  <article
+    class="bg-dark-blue/50 p-5 rounded-xl border-2 border-cyan-900 flex justify-center items-center gap-5 hover:scale-[1.05] transition-transform cursor-pointer hover:bg-dark-blue"
+  >
+    <figure class="w-10">
+      <img
+        src={img}
+        alt="icono de la tecnologia del que trata el quiz"
+        class="drop-shadow-[0_0_15px_#fff5]"
+      />
+    </figure>
+
+    <h3 class="text-white text-xl">{name}</h3>
+  </article>
+</a>
+
+<style>
+  article {
+    animation: show-card 1s both;
+    animation-timeline: view();
+    animation-range: entry 100% cover 25%;
+    transition: scale 0.3s;
+  }
+
+  article:hover {
+    scale: 1.05;
+  }
+
+  @keyframes show-card {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

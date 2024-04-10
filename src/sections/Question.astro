@@ -1,12 +1,12 @@
 ---
-import QuestionsJson from '../../lib/questions.json'
+import QuestionsJson from '../../services/python.json'
 
 const json = JSON.stringify(QuestionsJson)
 ---
 
 <section
   data-json={json}
-  class="quiz-question hidden py-10 flex-col gap-11 text-white"
+  class="quiz-question py-10 flex-col gap-11 text-white"
 >
   <p
     class="progress font-['Fredoka'] gap-2 text-xl text-center drop-shadow-sm flex items-center justify-center text-gray-300"

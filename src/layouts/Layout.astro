@@ -1,5 +1,6 @@
 ---
 import Background from '../components/Background.astro'
+import Footer from '../components/Footer.astro'
 
 interface Props {
   title: string
@@ -18,26 +19,24 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="h-[100dvh] flex flex-col overflow-hidden">
+  <body class="min-h-[100dvh] flex flex-col font-menlo">
     <Background />
     <slot />
+    <Footer />
   </body>
 </html>
 
 <style is:global>
   @font-face {
     font-family: 'Fredoka';
-    src: url('/fonts/Fredoka-VariableFont.ttf') format('truetype');
+    src: url('/fonts/Fredoka.ttf') format('truetype');
   }
-
   @font-face {
-    font-family: 'JetBrainsMono';
+    font-family: 'Menlo';
+    src: url('/fonts/Menlo.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Menlo';
     src: url('/fonts/JetBrainsMono.ttf') format('truetype');
   }
-
-  body {
-    font-family: 'JetBrainsMono', Verdana, Geneva, Tahoma, sans-serif;
-  }
 </style>
-
-

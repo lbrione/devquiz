@@ -1,0 +1,29 @@
+---
+import LanguageCard from "../components/LanguageCard.astro"
+import quizzes from '../services/config.json'
+---
+
+<section class="flex flex-col py-20 gap-10">
+  <h1 class="text-5xl md:text-6xl font-bold flex justify-center">
+    <span class="text-bright-pink">&lt;Dev</span>
+    <span class="text-light-blue">Quiz&gt;</span>
+  </h1>
+
+  <p class="text-2xl text-slate-300 text-center">
+    El desafío para desarrolladores. <br>
+    Pon a prueba tus conocimientos y mejora tus
+    habilidades.
+  </p>
+
+  <section class="grid grid-cols-3 gap-5 pt-10">
+    {quizzes.map((quiz) => (
+      <LanguageCard {...quiz}/>
+    ))}
+  </section>
+</section>
+
+<style>
+  section.hide-menu {
+    animation: hide-elem 0.3s forwards ease-in;
+  }
+</style>

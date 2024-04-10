@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Python",
+    "file": "python.json",
+    "img": "https://cdn.svgporn.com/logos/python.svg"
+  },
+  {
+    "name": "Java Script",
+    "file": "python.json",
+    "img": "https://cdn.svgporn.com/logos/javascript.svg"
+  },
+  {
+    "name": "Django",
+    "file": "python.json",
+    "img": "https://cdn.svgporn.com/logos/django-icon.svg"
+  }
+]

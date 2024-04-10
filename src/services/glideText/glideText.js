@@ -1,3 +1,5 @@
+import './glideText.css'
+
 export function glideText(elem, text) {
   if (typeof(elem) === 'string') {
     elem = document.querySelector(elem)

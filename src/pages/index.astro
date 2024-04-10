@@ -1,32 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Menu from '../pages/sections/Menu.astro'
-import Question from '../pages/sections/Question.astro'
-import Results from '../pages/sections/Results.astro'
-import Github from '../icons/github.astro'
+import Home from '../sections/Home.astro'
 ---
 
 <Layout title="Dev Quiz">
-  <main class="flex-grow mx-auto w-[80%] overflow-hidden">
-    <Menu />
-    <Question />
-    <Results />
+  <main class="flex-grow mx-auto w-[70%]">
+    <Home />
+    <!-- <Question /> -->
+    <!-- <Results /> -->
   </main>
-
-  <footer
-    class="text-lg py-5 text-white flex justify-center gap-3 items-center font-['Fredoka']"
-  >
-    <span>Hecho por</span>
-    <a
-      target="_blank"
-      href="https://github.com/lbrione/python-quiz"
-      class="text-py-yellow flex items-center gap-1"
-    >
-      <Github />
-      lbrione
-    </a>
-  </footer>
 </Layout>
+
+
+
 
 <style>
   @keyframes hide-elem {
@@ -71,4 +57,4 @@ import Github from '../icons/github.astro'
   }
 </style>
 
-<script src="../lib/main.js"></script>
+<!-- <script src="../services/main.js"></script> -->
