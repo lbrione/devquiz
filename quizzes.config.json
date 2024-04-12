@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Python",
+    "file": "python.json",
+    "img": "https://cdn.svgporn.com/logos/python.svg",
+    "id": "d40e29c09dbbbb953aca4df0e"
+  },
+  {
+    "name": "JavaScript",
+    "file": "javascript.json",
+    "img": "https://cdn.svgporn.com/logos/javascript.svg",
+    "id": "f3cfb5245b3890335ea530c76"
+  },
+  {
+    "name": "Django",
+    "file": "django.json",
+    "img": "https://cdn.svgporn.com/logos/django-icon.svg",
+    "id": "5c66c5dd1d80982d9480fce5b"
+  },
+  {
+    "name": "My SQL",
+    "file": "sql.json",
+    "img": "https://cdn.svgporn.com/logos/mysql.svg",
+    "id": "335e61edd2f33946ba0c17c80"
+  }
+]

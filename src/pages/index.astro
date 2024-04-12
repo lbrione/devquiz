@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import LanguageCard from '../components/LanguageCard.astro'
 
-import quizzes from '../services/config.json'
+import quizzes from '../services/quizzes.config.json'
 ---
 
 <Layout title="DevQuiz">
@@ -24,6 +24,5 @@ import quizzes from '../services/config.json'
     {quizzes.map((quiz) => <LanguageCard {...quiz} />)}
   </section>
 </Layout>
-
 
 <!-- <script src="../services/main.js"></script> -->
