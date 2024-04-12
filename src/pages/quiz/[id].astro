@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import quizzes from '../../services/config.json'
+const { id } = Astro.params
+
+
+const quiz = quizzes.filter(quiz => quiz.file == id)[0]
+
+
+export function getStaticPaths() {
+  return quizzes.map(quiz => ({
+    params: {id: quiz.file}
+  })) 
+}
+---
+
+<Layout title=`Quiz ${'a'}`>
+  <header>
+    <article
+      transition:name=`${quiz.file}`
+      class="bg-dark-blue/50 p-5 rounded-xl border-2 border-cyan-900 flex justify-center items-center gap-5 cursor-pointer hover:bg-dark-blue"
+    >
+      <figure class="w-8">
+        <img
+          src={quiz.img}
+          alt=`"Icono de la tecnologia de ${quiz.name}`
+        />
+      </figure>
+
+      <h3 class="text-white text-xl">{quiz.name}</h3>
+    </article>
+  </header>
+  
+</Layout>

@@ -1,4 +1,4 @@
-import { glideText } from './glideText/glideText.js'
+import { glideText } from '../glideText/glideText.js'
 
 const $ = (selector, context = document) => context.querySelector(selector)
 

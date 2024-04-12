@@ -1,60 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Home from '../sections/Home.astro'
+import LanguageCard from '../components/LanguageCard.astro'
+
+import quizzes from '../services/config.json'
 ---
 
-<Layout title="Dev Quiz">
-  <main class="flex-grow mx-auto w-[70%]">
-    <Home />
-    <!-- <Question /> -->
-    <!-- <Results /> -->
-  </main>
+<Layout title="DevQuiz">
+  <header class="flex flex-col gap-10 py-20">
+    <h1 class="text-5xl md:text-6xl font-bold flex justify-center">
+      <span class="text-bright-pink">&lt;Dev</span>
+      <span class="text-light-blue">Quiz&gt;</span>
+    </h1>
+
+    <p
+      class="text-2xl text-slate-200 text-center [text-shadow:_0_0_15px_#041223]"
+    >
+      ¡Bienvenido al Desafío para Desarrolladores!<br />
+      DevQuiz pone a prueba tus conocimientos con preguntas sobre tu tecnologia favorita.
+    </p>
+  </header>
+
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-5 pb-10">
+    {quizzes.map((quiz) => <LanguageCard {...quiz} />)}
+  </section>
 </Layout>
 
-
-
-
-<style>
-  @keyframes hide-elem {
-    20% {
-      transform: translateY(50px);
-    }
-    100% {
-      transform: translateY(-200%);
-      opacity: 0;
-      display: none;
-    }
-  }
-
-  @keyframes show-elem {
-    0% {
-      transform: translateY(-200%);
-      opacity: 0;
-    }
-    80% {
-      transform: translateY(50px);
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes show-up {
-    0% {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-
-    50% {
-      transform: translateY(-50px);
-    }
-
-    100% {
-      ransform: translateY(0);
-      opacity: 1;
-    }
-  }
-</style>
 
 <!-- <script src="../services/main.js"></script> -->
