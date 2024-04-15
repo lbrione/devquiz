@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro'
 import LanguageCard from '../components/LanguageCard.astro'
 
-import quizzes from '../services/quizzes.config.json'
+const quizzes = await Astro.glob('../services/quizzes/*.json');
 ---
 
 <Layout title="DevQuiz">
   <header class="flex flex-col gap-10 py-20">
-    <h1 class="text-5xl md:text-6xl font-bold flex justify-center">
+    <h1 class="text-5xl font-bold flex justify-center">
       <span class="text-bright-pink">&lt;Dev</span>
       <span class="text-light-blue">Quiz&gt;</span>
     </h1>
@@ -15,14 +15,17 @@ import quizzes from '../services/quizzes.config.json'
     <p
       class="text-2xl text-slate-200 text-center [text-shadow:_0_0_15px_#041223]"
     >
-      ¡Bienvenido al Desafío para Desarrolladores!<br />
-      DevQuiz pone a prueba tus conocimientos con preguntas sobre tu tecnologia favorita.
+      Pon a prueba tus conocimientos con preguntas sobre tu tecnologia favorita.
     </p>
   </header>
 
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-5 pb-10">
-    {quizzes.map((quiz) => <LanguageCard {...quiz} />)}
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-5 pb-32 md:pb-40">
+    {quizzes.map((quiz) => 
+      <LanguageCard  
+        id={quiz.id}
+        name={quiz.name}
+        image={quiz.image}
+      />
+    )}
   </section>
 </Layout>
-
-<!-- <script src="../services/main.js"></script> -->

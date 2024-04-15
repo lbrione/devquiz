@@ -1,0 +1,107 @@
+{
+  "id": "b293c9421ee39032g50c9c6d4",
+  "name": "CSS",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
+  "questions": [
+    {
+      "question": "¿Qué propiedad CSS se utiliza para cambiar el color de fondo de un elemento?",
+      "correctAnswer": "background-color",
+      "options": [
+        "background-color",
+        "bgcolor",
+        "color",
+        "background-image"
+      ]
+    },
+    {
+      "question": "¿Cómo se aplica un borde solo en el lado superior de un elemento?",
+      "correctAnswer": "border-top",
+      "options": [
+        "border-top",
+        "top-border",
+        "border-up",
+        "border"
+      ]
+    },
+    {
+      "question": "¿Qué propiedad se utiliza para cambiar el espaciado entre caracteres de un texto?",
+      "correctAnswer": "letter-spacing",
+      "options": [
+        "text-spacing",
+        "letter-spacing",
+        "character-spacing",
+        "spacing"
+      ]
+    },
+    {
+      "question": "¿Cómo se hace que un elemento se oculte, pero sin alterar el layout del documento?",
+      "correctAnswer": "visibility: hidden",
+      "options": [
+        "display: none",
+        "visibility: hidden",
+        "opacity: 0",
+        "hidden: true"
+      ]
+    },
+    {
+      "question": "¿Cuál es la propiedad que permite modificar la opacidad de un elemento?",
+      "correctAnswer": "opacity",
+      "options": [
+        "transparency",
+        "alpha",
+        "opacity",
+        "filter"
+      ]
+    },
+    {
+      "question": "¿Qué selector se utiliza para seleccionar todos los elementos <p> que son directamente hijos de un <div>?",
+      "correctAnswer": "div > p",
+      "options": [
+        "div p",
+        "div + p",
+        "div > p",
+        "div .p"
+      ]
+    },
+    {
+      "question": "¿Cómo se añade una sombra a los textos?",
+      "correctAnswer": "text-shadow",
+      "options": [
+        "font-shadow",
+        "text-shadow",
+        "shadow-text",
+        "shadow"
+      ]
+    },
+    {
+      "question": "¿Qué propiedad se utiliza para hacer un elemento flexible dentro de un contenedor Flexbox?",
+      "correctAnswer": "flex",
+      "options": [
+        "flex",
+        "flexible",
+        "flex-grow",
+        "expand"
+      ]
+    },
+    {
+      "question": "¿Cuál es la unidad relativa que se basa en el tamaño de fuente del elemento raíz del documento?",
+      "correctAnswer": "rem",
+      "options": [
+        "em",
+        "rem",
+        "percent",
+        "vw"
+      ]
+    },
+    {
+      "question": "¿Qué propiedad CSS se usa para establecer la posición de fondo en un elemento?",
+      "correctAnswer": "background-position",
+      "options": [
+        "background-align",
+        "background-place",
+        "background-position",
+        "background-location"
+      ]
+    }
+  ]
+}

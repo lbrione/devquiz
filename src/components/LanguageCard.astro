@@ -1,14 +1,14 @@
 ---
-const { id, name, img } = Astro.props
+const { id, name, image } = Astro.props
 ---
 
 <a href=`/quiz/${id}`>
   <article
     transition:name=`vt-${id}`
-    class="bg-dark-blue/50 p-5 rounded-xl border-2 border-cyan-900 flex justify-center items-center gap-5 cursor-pointer hover:bg-dark-blue"
+    class="bg-dark-blue/50 p-5 rounded-xl border border-cyan-900 flex justify-center items-center gap-5 cursor-pointer hover:bg-dark-blue"
   >
     <figure class="w-8">
-      <img src={img} alt=`"Icono de la tecnologia de ${name}` />
+      <img src={image} alt=`"Icono de la tecnologia de ${name}` />
     </figure>
 
     <h3 class="text-white text-xl">{name}</h3>

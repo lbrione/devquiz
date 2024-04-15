@@ -1,34 +1,68 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import quizzes from '../../services/quizzes.config.json'
+import Layout from '../../layouts/Layout.astro'
+import Arrow from '../../icons/arrow.astro'
+
+type Quiz = {
+  id: string
+  name: string
+  image: string
+  [key: string]: any
+}
+
 const { id } = Astro.params
+const quizzes: Quiz[] = await Astro.glob('../../services/quizzes/*.json')
+const quiz = quizzes.find((quiz) => quiz.id === id)
 
+if (!quiz) {
+  return Astro.redirect('/')
+}
 
-const quiz = quizzes.filter(quiz => quiz.id == id)[0]
-
-
-export function getStaticPaths() {
-  return quizzes.map(quiz => ({
-    params: {id: quiz.id}
-  })) 
+export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
+  const quizzes: Quiz[] = await Astro.glob('../../services/quizzes/*.json')
+  return quizzes.map((quiz) => ({
+    params: { id: quiz.id },
+  }))
 }
 ---
 
 <Layout title=`Quiz ${quiz.name}`>
-  <header>
-    <article
-      transition:name=`vt-${quiz.id}`
-      class="bg-dark-blue/50 p-5 rounded-xl border-2 border-cyan-900 flex justify-center items-center gap-5 cursor-pointer hover:bg-dark-blue"
-    >
+  <header class="flex items-center py-5 gap-5 text-white relative">
+    <a class="w-12 h-12 fill-gray-400 hover:fill-white" href="/">
+      <Arrow />
+    </a>
+
+    <article transition:name=`vt-${quiz.id}` class="flex gap-3 items-center">
       <figure class="w-8">
-        <img
-          src={quiz.img}
-          alt=`"Icono de la tecnologia de ${quiz.name}`
-        />
+        <img src={quiz.image} alt=`"Icono de la tecnologia de ${quiz.name}` />
       </figure>
 
-      <h3 class="text-white text-xl">{quiz.name}</h3>
+      <h3 class='text-xl"'>{quiz.name}</h3>
     </article>
+
+    <p class="quiz-counter flex-grow text-right">1/20</p>
   </header>
-  
+  <section class="pt-10 flex flex-col gap-12 text-white">
+    <div hidden data-json={JSON.stringify(quiz.questions)}></div>
+    <h2 class="quiz-question text-2xl text-center">
+      {quiz.questions[0].question}
+    </h2>
+    <ul
+      class="quiz-options text-center *:border *:px-10 *:py-3 *:text-lg flex flex-col gap-3 *:w-[min(400px,100%)] items-center hover:*:scale-[1.05] hover:*:cursor-pointer hover:*:border-py-yellow hover:*:bg-py-yellow hover:*:text-black *:rounded-lg hover:*:font-bold pb-28"
+    >
+      <li>{quiz.questions[0].options[0]}</li>
+      <li>{quiz.questions[0].options[1]}</li>
+      <li>{quiz.questions[0].options[2]}</li>
+      <li>{quiz.questions[0].options[3]}</li>
+    </ul>
+  </section>
 </Layout>
+
+
+<style>
+  ul li {
+    transition-property: transform, color, background-color;
+    transition-duration: .2s;
+  }
+</style>
+
+<script is:inline src="/js/quiz.js"></script>
