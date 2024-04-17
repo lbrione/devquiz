@@ -1,7 +1,7 @@
 {
   "id": "b293c9421ee39032g50c9c6d4",
   "name": "CSS",
-  "image": "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg",
+  "image": "https://svgl.vercel.app/library/css.svg",
   "questions": [
     {
       "question": "¿Qué propiedad CSS se utiliza para cambiar el color de fondo de un elemento?",

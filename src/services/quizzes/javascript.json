@@ -1,7 +1,7 @@
 {
   "id": "a192b8310ff28031f49b8b5e3",
   "name": "JavaScript",
-  "image": "https://cdn.svgporn.com/logos/javascript.svg",
+  "image": "https://svgl.vercel.app/library/javascript.svg",
   "questions": [
     {
       "question": "¿Qué método se utiliza para redondear un número al entero más cercano?",

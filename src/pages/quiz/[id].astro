@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import Arrow from '../../icons/arrow.astro'
+import Arrow from '../../assets/icons/arrow.astro'
 
 type Quiz = {
   id: string
@@ -31,19 +31,18 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
       <Arrow />
     </a>
 
-    <article transition:name=`vt-${quiz.id}` class="flex gap-3 items-center">
+    <article transition:name=`vt-${quiz.id}` class="flex gap-3 items-center overflow-hidden h-[75px]">
       <figure class="w-8">
         <img src={quiz.image} alt=`"Icono de la tecnologia de ${quiz.name}` />
       </figure>
-
-      <h3 class='text-xl"'>{quiz.name}</h3>
+      <h3>{quiz.name}</h3>
     </article>
 
     <p class="quiz-counter flex-grow text-right">1/20</p>
   </header>
-  <section class="pt-10 flex flex-col gap-12 text-white">
+  <section class="pt-10 flex flex-col gap-12 justify-center text-white">
     <div hidden data-json={JSON.stringify(quiz.questions)}></div>
-    <h2 class="quiz-question text-2xl text-center">
+    <h2 class="quiz-question text-2xl text-center max-w-[600px]">
       {quiz.questions[0].question}
     </h2>
     <ul
@@ -63,6 +62,26 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
     transition-property: transform, color, background-color;
     transition-duration: .2s;
   }
+
+  section {
+    animation-name: show-question;
+    animation-duration: 300ms;
+    animation-delay: 400ms;
+    animation-fill-mode: both;
+  }
+
+  @keyframes show-question {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>
 
-<script is:inline src="/js/quiz.js"></script>
+
+<script src="/src/services/js/quiz.js"></script>

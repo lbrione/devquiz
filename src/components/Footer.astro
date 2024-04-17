@@ -1,17 +1,31 @@
 ---
-import Github from '../icons/github.astro'
+import Github from '../assets/icons/github.astro'
+import Linkedin from '../assets/icons/linkedin.astro'
 ---
 
 <footer
-  class="py-5 text-white flex justify-center gap-3 items-center bg-dark-blue font-fredoka text-lg fixed bottom-0 w-full"
+  class="py-5 flex justify-center gap-4 bg-dark-blue font-fredoka text-lg fixed bottom-0 w-full"
 >
-  <span>Hecho por</span>
-  <a
-    target="_blank"
-    href="https://github.com/lbrione/python-quiz"
-    class="text-py-yellow flex items-center gap-1"
-  >
-    <Github />
-    lbrione
-  </a>
+  <div>
+    Hecho por
+    <a href="#" class="text-py-yellow hover:underline"
+      >lbrione</a
+    >
+  </div>
+  |
+  <div class="flex items-center gap-2">
+    <a
+      target="_blank"
+      href="https://github.com/lbrione/python-quiz"
+      class="text-gray-400 hover:text-white"
+    >
+      <Github />
+    </a>
+    <a
+      href="#"
+      class="text-gray-400 hover:text-white"
+    >
+      <Linkedin />
+    </a>
+  </div>
 </footer>

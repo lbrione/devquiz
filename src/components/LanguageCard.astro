@@ -5,13 +5,13 @@ const { id, name, image } = Astro.props
 <a href=`/quiz/${id}`>
   <article
     transition:name=`vt-${id}`
-    class="bg-dark-blue/50 p-5 rounded-xl border border-cyan-900 flex justify-center items-center gap-5 cursor-pointer hover:bg-dark-blue"
+    class="bg-dark-blue/50 px-5 rounded-xl border border-cyan-900 flex items-center gap-5 cursor-pointer hover:bg-dark-blue h-[75px] overflow-hidden"
   >
     <figure class="w-8">
       <img src={image} alt=`"Icono de la tecnologia de ${name}` />
     </figure>
 
-    <h3 class="text-white text-xl">{name}</h3>
+    <h3 class="text-white text-xl flex-grow">{name}</h3>
   </article>
 </a>
 
@@ -25,7 +25,7 @@ const { id, name, image } = Astro.props
 
   article:hover {
     scale: 1.05;
-    transition: scale 0.1s;
+    transition: scale 100ms;
   }
 
   @keyframes show-card {
