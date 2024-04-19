@@ -2,15 +2,8 @@
 import Layout from '../../layouts/Layout.astro'
 import Arrow from '../../assets/icons/arrow.astro'
 
-type Quiz = {
-  id: string
-  name: string
-  image: string
-  [key: string]: any
-}
-
 const { id } = Astro.params
-const quizzes: Quiz[] = await Astro.glob('../../services/quizzes/*.json')
+const quizzes = await Astro.glob('../../quizzes/*.json')
 const quiz = quizzes.find((quiz) => quiz.id === id)
 
 if (!quiz) {
@@ -18,35 +11,38 @@ if (!quiz) {
 }
 
 export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
-  const quizzes: Quiz[] = await Astro.glob('../../services/quizzes/*.json')
   return quizzes.map((quiz) => ({
     params: { id: quiz.id },
   }))
 }
 ---
 
-<Layout title=`Quiz ${quiz.name}`>
-  <header class="flex items-center py-5 gap-5 text-white relative">
+<Layout title=`Quiz - ${quiz.name}`>
+  <header class="flex items-center py-8 gap-5 text-white">
     <a class="w-12 h-12 fill-gray-400 hover:fill-white" href="/">
       <Arrow />
     </a>
 
-    <article transition:name=`vt-${quiz.id}` class="flex gap-3 items-center overflow-hidden h-[75px]">
+    <article
+      transition:name=`vt-${quiz.id}`
+      class="flex gap-3 items-center overflow-hidden"
+    >
       <figure class="w-8">
-        <img src={quiz.image} alt=`"Icono de la tecnologia de ${quiz.name}` />
+        <img src={quiz.image} alt=`"Icono de ${quiz.name}` />
       </figure>
       <h3>{quiz.name}</h3>
     </article>
 
-    <p class="quiz-counter flex-grow text-right">1/20</p>
+    <p class="flex-grow text-right">1/{quiz.questions.length}</p>
   </header>
-  <section class="pt-10 flex flex-col gap-12 justify-center text-white">
+
+  <section class="flex flex-col gap-12 items-center text-white pt-5">
     <div hidden data-json={JSON.stringify(quiz.questions)}></div>
-    <h2 class="quiz-question text-2xl text-center max-w-[600px]">
+    <h2 class="titulo text-2xl text-center w-[min(700px,100%)]">
       {quiz.questions[0].question}
     </h2>
     <ul
-      class="quiz-options text-center *:border *:px-10 *:py-3 *:text-lg flex flex-col gap-3 *:w-[min(400px,100%)] items-center hover:*:scale-[1.05] hover:*:cursor-pointer hover:*:border-py-yellow hover:*:bg-py-yellow hover:*:text-black *:rounded-lg hover:*:font-bold pb-28"
+      class="flex flex-col gap-3 w-full items-center text-center *:w-[min(400px,100%)] *:border *:px-5 *:py-3 *:text-lg hover:*:scale-[1.05] hover:*:cursor-pointer hover:*:border-py-yellow hover:*:bg-py-yellow hover:*:text-black *:rounded-lg hover:*:font-bold"
     >
       <li>{quiz.questions[0].options[0]}</li>
       <li>{quiz.questions[0].options[1]}</li>
@@ -56,24 +52,23 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
   </section>
 </Layout>
 
-
 <style>
   ul li {
     transition-property: transform, color, background-color;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
   }
 
   section {
     animation-name: show-question;
     animation-duration: 300ms;
-    animation-delay: 400ms;
+    animation-delay: 300ms;
     animation-fill-mode: both;
   }
 
   @keyframes show-question {
     0% {
       opacity: 0;
-      transform: translateY(-100%);
+      transform: translateY(-50%);
     }
 
     100% {
@@ -84,4 +79,3 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
 </style>
 
 
-<script src="/src/services/js/quiz.js"></script>

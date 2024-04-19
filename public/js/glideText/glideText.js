@@ -1,4 +1,5 @@
-import './glideText.css'
+// import './glideText.css'
+console.log('si')
 
 export function glideText(elem, text) {
   if (typeof(elem) === 'string') {

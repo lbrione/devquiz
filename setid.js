@@ -1,7 +1,7 @@
 import fs from 'node:fs'
-import path from 'node:path'
+// import path from 'node:path'
 import crypto from 'node:crypto'
-import { fileURLToPath } from 'url'
+// import { fileURLToPath } from 'url'
 
 function generateId() {
   return crypto.randomBytes(16).toString('hex').slice(0, 25)

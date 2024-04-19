@@ -1,17 +1,14 @@
-console.log('sii')
+import { glideText } from './glideText/glideText.js'
 
-// import { glideText } from '../../src/services/glideText/glideText.js'
+;(() => {
+  const $ = (selector, context = document) => context.querySelector(selector)
+  const questions = JSON.parse($('div[data-json]').dataset.json)
 
-// const $ = (selector, context = document) => context.querySelector(selector)
-
-// const questions = JSON.parse($('div[data-json]').dataset.json)
-// const $counter = $('.quiz-counter')
-// const $question = $('.quiz-question')
-// const $options = $('.quiz-options')
-
-
-// console.log($question.textContent)
-
+  console.log(questions[0].question)
+  // const $counter = $('.quiz-counter')
+  // const $question = $('.quiz-question')
+  // const $options = $('.quiz-options')
+})()
 
 // let currentQuestion = 0
 
@@ -51,7 +48,6 @@ console.log('sii')
 // $options.addEventListener('click', () => {
 
 // })
-
 
 // document.addEventListener('load', () => {
 //   console.log('si')

@@ -2,31 +2,33 @@
 import Layout from '../layouts/Layout.astro'
 import LanguageCard from '../components/LanguageCard.astro'
 
-const quizzes = await Astro.glob('../services/quizzes/*.json');
+const quizzes = await Astro.glob('../quizzes/*.json')
 ---
 
 <Layout title="Dev Quiz">
   <header class="flex flex-col gap-10 py-16">
-    <h1 class="text-5xl font-bold flex justify-center items-center">
+    <h1
+      class="text-5xl font-bold flex justify-center items-center font-JetBrainsMono"
+    >
       <span class="text-bright-pink">&lt;dev</span>
-      <img class="w-[100px]" src="/favicon.svg" alt="Icono de la pagina">
+      <img class="w-[100px]" src="/favicon.svg" alt="Icono de la pagina" />
       <span class="text-light-blue">uiz&gt;</span>
     </h1>
 
-    <p
-      class="text-2xl text-slate-200 text-center [text-shadow:_0_0_15px_#041223]"
-    >
-      Pon a prueba tus conocimientos respondiendo un quiz de preguntas sobre tu tecnologia favorita. <br><br>¡Empieza uno ahora!
+    <p class="text-2xl text-slate-200 text-center flex flex-col gap-5">
+      <span
+        >Pon a prueba tus conocimientos y descubre cuánto sabes realmente sobre
+        tu tecnología favorita.</span
+      >
+      <span>¡Empieza un quiz ahora!</span>
     </p>
   </header>
 
-  <section class="grid grid-cols-1 md:grid-cols-3 gap-5 pb-32 md:pb-40">
-    {quizzes.map((quiz) => 
-      <LanguageCard  
-        id={quiz.id}
-        name={quiz.name}
-        image={quiz.image}
-      />
-    )}
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 pb-32 md:pb-40">
+    {
+      quizzes.map((quiz) => (
+        <LanguageCard id={quiz.id} name={quiz.name} image={quiz.image} />
+      ))
+    }
   </section>
 </Layout>

@@ -13,7 +13,7 @@ export default {
 			fontFamily: {
 				"fredoka": ['Fredoka', 'Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
 				"menlo": ['Menlo', 'Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
-				"jet-brains": ['JetBrainsMono', 'Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+				"JetBrainsMono": ['JetBrainsMono', 'Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
 			}
 		},
 	},
