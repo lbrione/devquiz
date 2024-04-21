@@ -4,7 +4,7 @@
   "image": "https://svgl.vercel.app/library/css.svg",
   "questions": [
     {
-      "question": "¿Qué propiedad CSS se utiliza para cambiar el color de fondo de un elemento?",
+      "question": "¿Qué propiedad CSS se usa para cambiar el color de fondo de un elemento?",
       "correctAnswer": "background-color",
       "options": [
         "background-color",
@@ -54,12 +54,12 @@
       ]
     },
     {
-      "question": "¿Qué selector se utiliza para seleccionar todos los elementos <p> que son directamente hijos de un <div>?",
-      "correctAnswer": "div > p",
+      "question": "¿Qué selector se utiliza para seleccionar todos los elementos &lt;p&gt; que son directamente hijos de un &lt;div&gt;?",
+      "correctAnswer": "div &gt; p",
       "options": [
         "div p",
         "div + p",
-        "div > p",
+        "div &gt; p",
         "div .p"
       ]
     },

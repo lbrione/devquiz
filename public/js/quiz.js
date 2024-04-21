@@ -1,16 +1,3 @@
-import { glideText } from './glideText/glideText.js'
-
-;(() => {
-  const $ = (selector, context = document) => context.querySelector(selector)
-  const questions = JSON.parse($('div[data-json]').dataset.json)
-
-  console.log(questions[0].question)
-  // const $counter = $('.quiz-counter')
-  // const $question = $('.quiz-question')
-  // const $options = $('.quiz-options')
-})()
-
-// let currentQuestion = 0
 
 // function setQuestion() {
 //   glideText('.progress-number', currentQuestion+1)
@@ -43,12 +30,3 @@ import { glideText } from './glideText/glideText.js'
 //     setQuestion()
 //   }, 1500)
 // }
-
-// // Events section
-// $options.addEventListener('click', () => {
-
-// })
-
-// document.addEventListener('load', () => {
-//   console.log('si')
-// })

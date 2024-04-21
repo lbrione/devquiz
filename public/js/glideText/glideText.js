@@ -1,19 +1,16 @@
-// import './glideText.css'
-console.log('si')
-
-export function glideText(elem, text) {
-  if (typeof(elem) === 'string') {
-    elem = document.querySelector(elem)
-  }
+export function glideText(sel, text) {
+  const elem = typeof sel === 'string' ? document.querySelector(sel) : sel
 
   elem.innerHTML = `
-  <span class="text-out">${elem.textContent}</span>
-  <span class="text-in">${text}</span>`
+  <div class="glide-text">
+    <span class="glide-text-out">${elem.textContent}</span>
+    <span class="glide-text-in">${text}</span>
+  </div>`
 
-  const defineText = () => {
+  const setText = () => {
     elem.innerHTML = text
-    elem.removeEventListener('animationend', defineText)
+    elem.removeEventListener('animationend', setText)
   }
 
-  elem.addEventListener('animationend', defineText)
+  elem.addEventListener('animationend', setText)
 }
