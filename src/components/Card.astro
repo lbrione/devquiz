@@ -1,0 +1,58 @@
+---
+const { id, name, image, numQuestions, difficult } = Astro.props
+
+const difficultColor =
+  difficult === 'easy'
+    ? 'bg-green-500'
+    : difficult === 'medium'
+      ? 'bg-yellow-500'
+      : difficult === ''
+---
+
+<a href=`/quiz/${id}`>
+  <article
+    transition:name=`vt-${id}`
+    class="bg-dark-blue/50 px-5 rounded-xl border border-cyan-900 flex items-center gap-5 cursor-pointer hover:bg-dark-blue hover:border-cyan-500 h-[75px] overflow-hidden relative"
+  >
+    <figure class="w-8">
+      <img src={image} alt="Icono" />
+    </figure>
+    <div>
+      <h3 class="text-white text-lg flex-grow">{name}</h3>
+      <span class="text-[14px] text-gray-400">{numQuestions} preguntas</span>
+    </div>
+
+    <div
+      class=`absolute top-0 right-0 w-3 h-3 z-[-1] rounded-full m-3 ${difficultColor}`
+    >
+    </div>
+  </article>
+</a>
+
+<style>
+  article {
+    animation: show-card 1s both;
+    animation-timeline: view();
+    animation-range: entry 100% cover 25%;
+    transition: scale 0.3s;
+  }
+
+  article:hover {
+    scale: 1.05;
+    transition: scale 100ms;
+  }
+
+  @keyframes show-card {
+    0% {
+      opacity: 0;
+    }
+
+    15% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

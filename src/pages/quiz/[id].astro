@@ -53,6 +53,10 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
 </Layout>
 
 <style>
+  h2 {
+    transition: height 300ms;
+  }
+
   ul li {
     transition-property: transform, color, background-color;
     transition-duration: 0.2s;
@@ -90,7 +94,7 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
 
   function chageQuestion() {
     glideText($counter, currentQuestion + 1)
-    glideText($question, questions[currentQuestion].question)
+    glideText($question, questions[currentQuestion].question, true)
 
     Array.from($options.children).forEach((elem, index) => {
       elem.dataset.op = questions[currentQuestion].options[index]

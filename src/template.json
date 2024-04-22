@@ -1,0 +1,17 @@
+{
+  "id": "0",
+  "name": "name",
+  "image": "url-image",
+  "questions": [
+    {
+      "question": "question",
+      "correctAnswer": "correctAnswer",
+      "options": [
+        "option-1",
+        "option-2",
+        "option-3",
+        "option-4"
+      ]
+    }
+  ]
+}

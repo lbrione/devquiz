@@ -1,4 +1,4 @@
-export function glideText(sel, text) {
+export function glideText(sel, text, dynamic) {
   const elem = typeof sel === 'string' ? document.querySelector(sel) : sel
 
   elem.innerHTML = `
@@ -6,6 +6,11 @@ export function glideText(sel, text) {
     <span class="glide-text-out">${elem.textContent}</span>
     <span class="glide-text-in">${text}</span>
   </div>`
+
+  if (dynamic) {
+    const h = elem.querySelector('.glide-text-in').offsetHeight
+    elem.style.height = `${h}px`
+  }
 
   const setText = () => {
     elem.innerHTML = text
