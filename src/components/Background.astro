@@ -1,3 +1,16 @@
-<div class="fixed inset-0 -z-10 ">
-  <div class="relative h-full w-full bg-dark-blue"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div></div>
+<div class="fixed inset-0 -z-10 bg-dark-blue">
+  <div class="absolute top-0 h-full w-full bg-dark-blue bg-[radial-gradient(#ffffff11_2px,#00091d_1px)] bg-[size:90px_90px]"></div>
 </div>
+
+<style>
+  div div {
+    /* background-position: 0 -90px; */
+    animation: slicebg 5s forwards infinite linear;
+  }
+
+  @keyframes slicebg {
+    100% {
+      background-position: 0 -90px;
+    }
+  }
+</style>
