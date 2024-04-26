@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'py-yellow': '#FFDE58',
+				'yellow': '#FFDE58',
 				'midnight-blue': '#1E2541',
 				"dark-blue": "#041223",
 				"bright-pink": "#FF79BE",

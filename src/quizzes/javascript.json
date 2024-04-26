@@ -1,0 +1,107 @@
+{
+  "id": "0",
+  "name": "JavaScript Básico",
+  "image": "https://cdn.svgporn.com/logos/javascript.svg",
+  "questions": [
+    {
+      "question": "¿Qué tipo de lenguaje es JavaScript?",
+      "correctAnswer": "Alto nivel e interpretado",
+      "options": [
+        "Compilado",
+        "Bajo nivel",
+        "Alto nivel e interpretado",
+        "Marcado"
+      ]
+    },
+    {
+      "question": "¿Función principal de JavaScript en desarrollo web?",
+      "correctAnswer": "Agregar interactividad",
+      "options": [
+        "Estilos y diseños atractivos",
+        "Consultas a bases de datos",
+        "Definir estructura y contenido",
+        "Agregar interactividad"
+      ]
+    },
+    {
+      "question": "¿Forma correcta de incluir JavaScript en HTML?",
+      "correctAnswer": "&lt;script src=\"archivo.js\"&gt;&lt;/script&gt;",
+      "options": [
+        "&lt;script&gt;codigo.js&lt;/script&gt;",
+        "&lt;javascript src=\"archivo.js\"&gt;&lt;/js&gt;",
+        "&lt;script href=\"archivo.js\"&gt;&lt;/script&gt;",
+        "&lt;script src=\"archivo.js\"&gt;&lt;/s&gt;"
+      ]
+    },
+    {
+      "question": "Palabra clave para declarar variable en JavaScript?",
+      "correctAnswer": "var",
+      "options": [
+        "variable",
+        "v",
+        "var",
+        "let"
+      ]
+    },
+    {
+      "question": "Tipo de datos de 'true' en JavaScript?",
+      "correctAnswer": "Boolean",
+      "options": [
+        "String",
+        "Number",
+        "Boolean",
+        "Object"
+      ]
+    },
+    {
+      "question": "Método console.log() en JavaScript?",
+      "correctAnswer": "Muestra mensajes en consola",
+      "options": [
+        "Ventana emergente",
+        "Registro de errores",
+        "Muestra mensajes en consola",
+        "No hace nada"
+      ]
+    },
+    {
+      "question": "Resultado de '5' + 3 en JavaScript?",
+      "correctAnswer": "'53'",
+      "options": [
+        "8",
+        "'8'",
+        "'53'",
+        "Error"
+      ]
+    },
+    {
+      "question": "Operador para concatenar cadenas en JavaScript?",
+      "correctAnswer": "+",
+      "options": [
+        "&",
+        "*",
+        "+",
+        "-"
+      ]
+    },
+    {
+      "question": "Palabra clave para declarar función en JavaScript?",
+      "correctAnswer": "function",
+      "options": [
+        "func",
+        "method",
+        "function",
+        "def"
+      ]
+    },
+    {
+      "question": "Resultado de 10 == '10' en JavaScript?",
+      "correctAnswer": "true",
+      "options": [
+        "true",
+        "false",
+        "Error",
+        "NaN"
+      ]
+    }
+  ]
+}

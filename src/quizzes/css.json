@@ -2,13 +2,13 @@
   "id": "d948bsss8110cca80310d49ab8b5d26",
   "name": "CSS",
   "image": "https://cdn.svgporn.com/logos/python.svg",
-  "difficult": "medium",
+  "difficulty": "medium",
   "questions": [
     {
       "question": "hola",
       "correctAnswer": "4",
       "options": [
-        "opcion 1",
+        "4",
         "22",
         "5",
         "10"

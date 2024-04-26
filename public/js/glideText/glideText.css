@@ -6,27 +6,26 @@
 
 .glide-text span {
   width: 100%;
- display: block; 
+  display: block;
 }
 
 .glide-text span.glide-text-out {
-  animation: textOut 500ms ease forwards;
+  animation: textOut 300ms ease forwards;
 }
 
 .glide-text span.glide-text-in {
   position: absolute;
-  bottom: 0;
-  animation: textIn 500ms ease forwards;
+  top: 100%;
+  animation: textIn 300ms ease forwards;
 }
 
 @keyframes textIn {
   0% {
-    transform: translateY(100%);
     opacity: 0;
   }
-
+  
   100% {
-    transform: translateY(0%);
+    top: 0;
     opacity: 1;
   }
 }

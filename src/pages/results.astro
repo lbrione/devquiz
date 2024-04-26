@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Quiz - resultados">
+  <h1>Hola mundo</h1>
+</Layout>
+
+<script is:inline>
+  const correctQuestions = JSON.parse(localStorage.getItem('devquizQuestions'))
+  console.log(correctQuestions)
+</script>

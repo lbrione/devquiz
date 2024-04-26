@@ -6,38 +6,43 @@ const quizzes = await Astro.glob('../quizzes/*.json')
 ---
 
 <Layout title="Dev Quiz">
-  <header class="flex flex-col gap-10 pt-16 pb-14">
+  <header class="flex flex-col py-16 gap-5">
     <h1
       class="text-5xl font-bold flex justify-center items-center font-JetBrainsMono"
     >
       <span class="text-bright-pink">&lt;dev</span>
       <img
         class="w-[60px] sm:w-[100px]"
-        src="/devquiz.svg"
+        src="/favicon.svg"
         alt="Icono de la pagina"
       />
       <span class="text-light-blue">uiz&gt;</span>
     </h1>
 
     <p
-      class="text-lg sm:text-2xl text-slate-200 text-center flex flex-col gap-5"
+      class="text-lg sm:text-xl text-slate-200 text-center flex flex-col gap-5 max-w-[700px] mx-auto"
     >
-      <span>
-        Pon a prueba tus conocimientos y descubre cuánto sabes realmente sobre
-        tu tecnología favorita. <br />¡Completa un quiz ahora!
-      </span>
+      Pon a prueba tus conocimientos y descubre cuánto sabes realmente sobre tu
+      tecnología favorita. <br />¡Completa un quiz ahora!
     </p>
   </header>
 
-  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pb-28">
     {
-      quizzes.map(({id, name, image, questions, difficult}) => (
+      quizzes.map(({ id, name, image, questions, difficulty }) => (
         <Card
           id={id}
           name={name}
           image={image}
           numQuestions={questions.length}
-          difficult={difficult}
+          difficulty={difficulty}
+        />
+        <Card
+          id={id}
+          name={name}
+          image={image}
+          numQuestions={questions.length}
+          difficulty={difficulty}
         />
       ))
     }

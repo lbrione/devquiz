@@ -20,43 +20,47 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
 
 <Layout title=`Quiz - ${quiz.name}`>
   <link rel="stylesheet" href="/js/glideText/glideText.css" />
-  <header class="flex items-center py-8 gap-5 text-white">
-    <a class="w-12 h-12 fill-gray-400 hover:fill-white" href="/">
-      <Arrow />
-    </a>
+  <div class="h-screen flex flex-col">
+    <header class="flex items-center py-8 gap-5 text-white">
+      <a class="w-12 h-12 fill-gray-400 hover:fill-white" href="/">
+        <Arrow />
+      </a>
 
-    <article
-      transition:name=`vt-${quiz.id}`
-      class="flex gap-3 items-center overflow-hidden"
+      <article
+        transition:name=`vt-${quiz.id}`
+        class="flex gap-3 items-center overflow-hidden"
+      >
+        <figure class="w-8">
+          <img src={quiz.image} alt=`"Icono de ${quiz.name}` />
+        </figure>
+        <h3>{quiz.name}</h3>
+      </article>
+
+      <p class="flex-grow text-right">
+        <span class="quiz-counter">1</span>/{quiz.questions.length}
+      </p>
+    </header>
+
+    <section
+      class="section flex-grow justify-between flex flex-col items-center text-white py-10 max-h-[450px]"
     >
-      <figure class="w-8">
-        <img src={quiz.image} alt=`"Icono de ${quiz.name}` />
-      </figure>
-      <h3>{quiz.name}</h3>
-    </article>
-
-    <p class="flex-grow text-right">
-      <span class="quiz-counter">1</span>/{quiz.questions.length}
-    </p>
-  </header>
-
-  <section class="section flex flex-col gap-12 items-center text-white pt-5">
-    <h2 class="quiz-question text-2xl text-center w-[min(700px,100%)]">
-      {quiz.questions[0].question}
-    </h2>
-    <ul
-      class="quiz-options flex flex-col gap-3 w-full items-center text-center *:w-[min(400px,100%)] *:border *:px-5 *:py-3 *:text-lg hover:*:scale-[1.05] hover:*:cursor-pointer hover:*:border-py-yellow hover:*:bg-py-yellow hover:*:text-black *:rounded-lg hover:*:font-bold"
-    >
-      {quiz.questions[0].options.map((op: string) => <li data-op={op}>{op}</li>)}
-    </ul>
-  </section>
+      <h2 class="quiz-question text-2xl text-center w-[min(700px,100%)]">
+        {quiz.questions[0].question}
+      </h2>
+      <ul
+        class="quiz-options flex flex-col gap-3 w-full items-center text-center *:w-[min(400px,100%)] *:border *:px-5 *:py-3 hover:*:scale-[1.05] hover:*:cursor-pointer hover:*:border-py-yellow hover:*:bg-yellow hover:*:text-black *:rounded-lg hover:*:font-bold"
+      >
+        {
+          quiz.questions[0].options.map((op: string) => (
+            <li data-op={op}>{op}</li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
 </Layout>
 
 <style>
-  h2 {
-    transition: height 300ms;
-  }
-
   ul li {
     transition-property: transform, color, background-color;
     transition-duration: 0.2s;
@@ -85,11 +89,11 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
 <script is:inline define:vars={{ questions: quiz.questions }} type="module">
   import { glideText } from '/js/glideText/glideText.js'
 
-  const $ = (selector, context = document) => context.querySelector(selector)
+  const $counter = document.querySelector('.quiz-counter')
+  const $question = document.querySelector('.quiz-question')
+  const $options = document.querySelector('.quiz-options')
 
-  const $counter = $('.quiz-counter')
-  const $question = $('.quiz-question')
-  const $options = $('.quiz-options')
+  const correctQuestions = []
   let currentQuestion = 0
 
   function chageQuestion() {
@@ -108,13 +112,16 @@ export async function getStaticPaths(): Promise<{ params: { id: string } }[]> {
     }
 
     if (target.dataset.op === questions[currentQuestion].correctAnswer) {
-      currentQuestion++
-
-      if (currentQuestion < questions.length) {
-        chageQuestion()
-      }
-    } else {
-      chageQuestion()
+      correctQuestions.push(questions[currentQuestion])
     }
+
+    if (currentQuestion === questions.length - 1) {
+      localStorage.setItem('devquizQuestions', JSON.stringify(correctQuestions))
+      window.location.href = '/results'
+      return
+    }
+
+    currentQuestion++
+    chageQuestion()
   })
 </script>
