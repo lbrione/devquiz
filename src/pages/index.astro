@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
+import Arrow from '../assets/icons/arrow.astro'
 
 const quizzes = await Astro.glob('../quizzes/*.json')
 ---
@@ -25,7 +26,7 @@ const quizzes = await Astro.glob('../quizzes/*.json')
     </p>
   </header>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pb-28">
+  <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pb-28">
     {
       quizzes.map(({ id, name, image, questions, difficulty }) => (
         <Card

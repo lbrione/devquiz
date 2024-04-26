@@ -5,15 +5,11 @@ const { id, name, image, numQuestions } = Astro.props
 <a href=`/quiz/${id}` title={name}>
   <article
     transition:name=`vt-${id}`
-    class="px-5 py-4 rounded-xl border-2 border-cyan-900 flex items-center gap-5 cursor-pointer bg-dark-blue hover:border-cyan-500 overflow-hidden"
+    class="grid grid-cols-[max-content_1fr] grid-rows-2 gap-x-3 px-5 py-3 rounded-xl border-2 border-cyan-900 cursor-pointer bg-dark-blue hover:border-cyan-500"
   >
-    <figure class="w-8 min-w-8">
-      <img src={image} alt="Icono" />
-    </figure>
-    <div class="flex flex-col">
-      <h3 class="text-white">{name}</h3>
-      <span class="text-xs text-gray-400">{numQuestions} preguntas</span>
-    </div>
+    <img class="h-8 row-span-2 self-center" src={image} alt="Icono" />
+    <h3 class="text-white truncate">{name}</h3>
+    <span class="text-xs text-gray-400 truncate">{numQuestions} preguntas</span>
   </article>
 </a>
 
@@ -21,16 +17,16 @@ const { id, name, image, numQuestions } = Astro.props
   a {
     animation: show-card 1s both;
     animation-timeline: view();
-    animation-range: entry 0% cover 25%;
+    animation-range: entry 0% cover 15%;
   }
 
   @keyframes show-card {
     0% {
       opacity: 0;
-      transform: translateY(100%);
+      transform: scale(0);
     }
 
-    30% {
+    20% {
       opacity: 0;
     }
 
