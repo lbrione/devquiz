@@ -2,7 +2,7 @@
 const { id, name, image, numQuestions } = Astro.props
 ---
 
-<a href=`/quiz/${id}`>
+<a href=`/quiz/${id}` title={name}>
   <article
     transition:name=`vt-${id}`
     class="px-5 py-4 rounded-xl border-2 border-cyan-900 flex items-center gap-5 cursor-pointer bg-dark-blue hover:border-cyan-500 overflow-hidden"
@@ -11,7 +11,7 @@ const { id, name, image, numQuestions } = Astro.props
       <img src={image} alt="Icono" />
     </figure>
     <div class="flex flex-col">
-      <h3 class="text-white truncate">{name}</h3>
+      <h3 class="text-white">{name}</h3>
       <span class="text-xs text-gray-400">{numQuestions} preguntas</span>
     </div>
   </article>

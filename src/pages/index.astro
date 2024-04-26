@@ -19,9 +19,7 @@ const quizzes = await Astro.glob('../quizzes/*.json')
       <span class="text-light-blue">uiz&gt;</span>
     </h1>
 
-    <p
-      class="text-lg sm:text-xl text-slate-200 text-center flex flex-col gap-5 max-w-[700px] mx-auto"
-    >
+    <p class="text-lg sm:text-xl text-center max-w-[700px] mx-auto">
       Pon a prueba tus conocimientos y descubre cuánto sabes realmente sobre tu
       tecnología favorita. <br />¡Completa un quiz ahora!
     </p>
@@ -30,13 +28,6 @@ const quizzes = await Astro.glob('../quizzes/*.json')
   <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 pb-28">
     {
       quizzes.map(({ id, name, image, questions, difficulty }) => (
-        <Card
-          id={id}
-          name={name}
-          image={image}
-          numQuestions={questions.length}
-          difficulty={difficulty}
-        />
         <Card
           id={id}
           name={name}
